@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c04d4c51-9a73-4ba3-9667-fc60b2c9446c" name="Default Changelist" comment="" />
+    <list default="true" id="c04d4c51-9a73-4ba3-9667-fc60b2c9446c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/monsters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enviroment.py" beforeDir="false" afterPath="$PROJECT_DIR$/base.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,38 +16,42 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AI_Qlearning_of_magic_tower$just_test.coverage" NAME="just_test Coverage Results" MODIFIED="1569118413920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI_Qlearning_of_magic_tower$enviroment.coverage" NAME="enviroment Coverage Results" MODIFIED="1569126987724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$enviroment.coverage" NAME="enviroment Coverage Results" MODIFIED="1569327862751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$enviroment.coverage" NAME="enviroment Coverage Results" MODIFIED="1569334477385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/enviroment.py">
+        <entry file="file://$PROJECT_DIR$/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1995">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="5617">
+              <caret line="515" column="103" selection-start-line="515" selection-start-column="103" selection-end-line="515" selection-end-column="103" />
               <folding>
-                <element signature="e#631#1847#0" />
-                <element signature="e#1886#1940#0" />
-                <element signature="e#1979#2006#0" />
-                <element signature="e#2118#2256#0" />
-                <element signature="e#2418#2547#0" />
-                <element signature="e#2619#2653#0" />
-                <element signature="e#2684#2720#0" />
-                <element signature="e#2743#2759#0" />
-                <element signature="e#2801#3464#0" />
-                <element signature="e#3498#3687#0" />
-                <element signature="e#3723#4013#0" />
-                <element signature="e#4045#4771#0" />
+                <element signature="e#34#161#0" />
+                <element signature="e#7313#7421#0" />
+                <element signature="e#7444#7554#0" />
+                <element signature="e#7576#7684#0" />
+                <element signature="e#7707#7816#0" />
+                <element signature="e#7840#7950#0" />
+                <element signature="e#7974#8084#0" />
+                <element signature="e#8107#8201#0" />
+                <element signature="e#6962#7133#0" />
+                <element signature="e#7165#7266#0" />
+                <element signature="e#7296#7395#0" />
+                <element signature="e#7424#7522#0" />
+                <element signature="e#7552#7647#0" />
+                <element signature="e#7678#7775#0" />
+                <element signature="e#7806#7903#0" />
+                <element signature="e#7934#8031#0" />
+                <element signature="e#9541#9682#0" />
+                <element signature="e#9675#9814#0" />
+                <element signature="e#9806#9934#0" />
+                <element signature="e#9875#10193#0" />
+                <element signature="e#10219#10419#0" />
+                <element signature="e#10443#10685#0" />
+                <element signature="e#10709#10951#0" />
+                <element signature="e#10976#11220#0" />
+                <element signature="e#11243#12476#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-181045577/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9063">
-              <caret line="477" column="4" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -62,14 +71,27 @@
       <find>bonus</find>
       <find>info</find>
       <find>self.info</find>
+      <find>pick</find>
+      <find>bonus_item</find>
+      <find>ADD_OBJECT</find>
+      <find>World</find>
+      <find>add_objec</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/just_test.py" />
-        <option value="$PROJECT_DIR$/monsters.py" />
+        <option value="$PROJECT_DIR$/bonus_item.py" />
+        <option value="$PROJECT_DIR$/actions.py" />
         <option value="$PROJECT_DIR$/enviroment.py" />
+        <option value="$PROJECT_DIR$/enviro_item.py" />
+        <option value="$PROJECT_DIR$/world.py" />
+        <option value="$PROJECT_DIR$/monsters.py" />
+        <option value="$PROJECT_DIR$/base.py" />
       </list>
     </option>
   </component>
@@ -78,6 +100,9 @@
     <option name="y" value="-9" />
     <option name="width" value="535" />
     <option name="height" value="615" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -131,7 +156,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/enviroment.py" />
+      <option name="SCRIPT_NAME" value="D:\git_of_skydownacai\Qlearning_of_magic_tower\base.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,12 +210,12 @@
       <workItem from="1569129889484" duration="528000" />
       <workItem from="1569224564315" duration="9603000" />
       <workItem from="1569299267447" duration="733000" />
-      <workItem from="1569327635654" duration="323000" />
+      <workItem from="1569327635654" duration="10765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30430000" />
+    <option name="totallyTimeSpent" value="40872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
@@ -201,7 +226,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5005025" side_tool="true" weight="0.13572854" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22914574" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24245472" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -223,45 +248,86 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/just_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monsters.py">
+    <entry file="file://$PROJECT_DIR$/actions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/enviroment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1995">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <caret line="1" selection-start-line="1" selection-end-line="68" selection-end-column="100" />
           <folding>
-            <element signature="e#631#1847#0" />
-            <element signature="e#1886#1940#0" />
-            <element signature="e#1979#2006#0" />
-            <element signature="e#2118#2256#0" />
-            <element signature="e#2418#2547#0" />
-            <element signature="e#2619#2653#0" />
-            <element signature="e#2684#2720#0" />
-            <element signature="e#2743#2759#0" />
-            <element signature="e#2801#3464#0" />
-            <element signature="e#3498#3687#0" />
-            <element signature="e#3723#4013#0" />
-            <element signature="e#4045#4771#0" />
+            <element signature="e#22#700#0" />
+            <element signature="e#720#1038#0" />
+            <element signature="e#1064#1264#0" />
+            <element signature="e#1288#1530#0" />
+            <element signature="e#1554#1796#0" />
+            <element signature="e#1821#2065#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/enviro_item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bonus_item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monsters.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-181045577/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9063">
+        <state relative-caret-position="242">
           <caret line="477" column="4" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5617">
+          <caret line="515" column="103" selection-start-line="515" selection-start-column="103" selection-end-line="515" selection-end-column="103" />
+          <folding>
+            <element signature="e#34#161#0" />
+            <element signature="e#7313#7421#0" />
+            <element signature="e#7444#7554#0" />
+            <element signature="e#7576#7684#0" />
+            <element signature="e#7707#7816#0" />
+            <element signature="e#7840#7950#0" />
+            <element signature="e#7974#8084#0" />
+            <element signature="e#8107#8201#0" />
+            <element signature="e#6962#7133#0" />
+            <element signature="e#7165#7266#0" />
+            <element signature="e#7296#7395#0" />
+            <element signature="e#7424#7522#0" />
+            <element signature="e#7552#7647#0" />
+            <element signature="e#7678#7775#0" />
+            <element signature="e#7806#7903#0" />
+            <element signature="e#7934#8031#0" />
+            <element signature="e#9541#9682#0" />
+            <element signature="e#9675#9814#0" />
+            <element signature="e#9806#9934#0" />
+            <element signature="e#9875#10193#0" />
+            <element signature="e#10219#10419#0" />
+            <element signature="e#10443#10685#0" />
+            <element signature="e#10709#10951#0" />
+            <element signature="e#10976#11220#0" />
+            <element signature="e#11243#12476#0" />
+          </folding>
         </state>
       </provider>
     </entry>

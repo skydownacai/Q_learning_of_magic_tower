@@ -1,4 +1,3 @@
-import math
 class invalid_object(Exception):
 	def __init__(self,error = None):
 		print('Invalid Object!')
@@ -15,21 +14,32 @@ class value_error(Exception):
 		print(info)
 class Object:
 	type_of_str = {
+
 		0 : "monster",
 		1 : "npc",
 		2 : "store",
 		4 : "enviro_item",
 		3 : "bonus",
 		5 : "warrior"
+
 	}
+
 	count = {
 		"monster" :0,
-		"bonus": 0
+		"bonus": 0,
+		'enviro_item':0,
+		'npc':0,
+		'store':0,
 	}
+
+	index = {
+
+	}
+
 	def __getattr__(self, key):
 		'''valid attr:
 			- name (str) : the name of object
-			- type (int) : the type of object ,eg : 0. monster , 1 npc 2 store 4 enviro_item (eg. the key to a door) 4.bonus_item 5.warrior
+			- type (int) : the type of object ,eg : 0. monster , 1 npc 2 store 3.bonus_item(eg. a key that you can pick up as a reward) 4 enviro_item (eg.a door)  5.warrior
 				exclusive attr with each type of object:
 					type 0 & 5:
 						1. health
@@ -94,7 +104,6 @@ class Object:
 				raise  type_error("The value for attr <<interact_prerequiresite>> and <<as_prerequiresite_to>> must be the instance of Object Rather than the instance of {}".format(type(value)))
 			if type == 5:
 				raise  invalid_attribution()
-
 	def add_action(self,action):
 		if not isinstance(action,Action):
 				raise type_error("If you want to add a action to a object. The action must be the instance of the class Action")
@@ -123,8 +132,55 @@ class Object:
 			return  info
 		if self.TYPE == 'warrior':
 			return str(self.__dict__)
+
+		if self.TYPE == 'enviro_item':
+			info = "item : {}\n".format(self.name)
+			for action in self.interact_actions:
+				info += "<Action " + str(self.interact_actions.index(action)) + "> : " + action.info + "\n"
+			return info
+
+		if self.TYPE == 'npc':
+			info = "npc : {}\n".format(self.name)
+			for action in self.interact_actions:
+				info += "<Action " + str(self.interact_actions.index(action)) + "> : " + action.info + "\n"
+			return info
+	def show(self):
+		print(self.__dict__)
+
+
+class World:
+
+	warrior = None
+
+	def __init__(self):
+		self.items = []
+
+
+	def add(self,item : Object,floor : int):
+		'add a object to the world at the floor'
+		item.floor = floor
+		self.items.append(item)
+
+	@property
+	def state(self):
+		'''当前'''
+		return
+
+	def reward(self,action):
+		''''''
+		return
+	def run_warrior(self,strategy_func = None):
+		if World.warrior == None:
+			raise value_error("Please Try to run <World.warrior = > to specific a warrior to the World.")
+		if strategy_func == None:
+			raise value_error("Please add a strategy to the warrior to let the warrior know when he faces the state how he act to")
+
+		while True:
+			action = strategy_func(self.state)
+ 			reward = self.reward(action)
+
 	@staticmethod
-	def add_object(__init__):
+	def object_added(__init__):
 		def inner(*args):
 			__init__(*args)
 			instance = args[0]
@@ -135,6 +191,29 @@ class Object:
 				instance.interact_actions = [PickBonus(instance.bonus_name,instance.bonus_value,instance.name)]
 		return inner
 
+
+
+class Action:
+	@property
+	def interactor(self):
+		try:
+			return Action.actor
+		except:
+			raise value_error("You haven't specific a warrior to interact.Try: Action.interactor = ")
+	@interactor.setter
+	def interactor(self,value):
+		if not isinstance(value,Warrior):
+			raise type_error("The interactor must be the instance of Warrior!")
+		Action.actor = value
+	def act(self,callback = None,callback_args = None):
+		self.interact()
+		if callback != None:
+			if callback_args != None:
+				callback(callback_args)
+			else:
+				callback()
+	def __str__(self):
+		return self.name
 class NullObject(Object):
 	def __init__(self):
 		self.name = "Void object"
@@ -161,6 +240,8 @@ class Warrior(Object):
 			_status[key] = self[key]
 		return _status
 class Store(Object):
+
+	@World.object_added
 	def __init__(self,Buyactions,interact_prerequiresite = NullObject()):
 		self.name = "Store"
 		self.type = 2
@@ -168,15 +249,43 @@ class Store(Object):
 		self.interact_actions = Buyactions
 
 class Monster(Object):
+
 	def init(self):
 		pass
-	@Object.add_object
+
+	@World.object_added
 	def __init__(self):
 		self.type = 0
 		self.init() #在这里自定义
 		self.interact_actions = [Fight(self)]
 	def fight(self):
 		self.interact_actions[0].interact()
+
+class Enviro_item(Object):
+
+
+	@World.object_added
+	def __init__(self):
+		self.type = 4
+		self.init()
+		self.status = 0 #status = 0 表明还未进行互动 status = 1 表明已经互动过
+
+	def act(self):
+		self.interact_actions[0].interact()
+
+class Npc(Object):
+
+	@staticmethod
+	def baseinit(__init__):
+		def inner(*args,**kwarg):
+			__init__(*args)
+			instance = args[0]
+			instance.type = 1
+			instance.staus = 0
+		return inner
+	def act(self):
+		self.interact_actions[0].interact()
+
 class 骷髅人(Monster):
 	def init(self):
 		self.name = "骷髅人"
@@ -212,8 +321,22 @@ class 绿色史莱姆(Monster):
 		self.defense = 1
 		self.gold = 1
 		self.health = 35
+class 红色史莱姆(Monster):
+	def init(self):
+		self.name = "红色史莱姆"
+		self.attack = 20
+		self.defense = 2
+		self.gold = 2
+		self.health = 45
+class 初级士兵(Monster):
+	def init(self):
+		self.name = "初级士兵"
+		self.attack = 48
+		self.defense = 22
+		self.health = 50
+
 class Bonus_Item(Object):
-	@Object.add_object
+	@World.object_added
 	def __init__(self):
 		'''
 		bonus_name:收益加成的属性名成
@@ -223,9 +346,7 @@ class Bonus_Item(Object):
 		self.init()
 	def pick(self):
 		self.interact_actions[0].interact()
-	@staticmethod
-	def test():
-		return 1
+
 class yellow_key(Bonus_Item):
 	def init(self):
 		self.bonus_name = 'yellow_key'
@@ -261,27 +382,43 @@ class Health400(Bonus_Item):
 		self.name = "Health400up"
 		self.bonus_name = 'health'
 		self.bonus_value = 400
-class Action:
-	@property
-	def interactor(self):
-		try:
-			return Action.actor
-		except:
-			raise value_error("You haven't specific a warrior to interact.Try: Action.interactor = ")
-	@interactor.setter
-	def interactor(self,value):
-		if not isinstance(value,Warrior):
-			raise type_error("The interactor must be the instance of Warrior!")
-		Action.actor = value
-	def act(self,callback = None,callback_args = None):
-		self.interact()
-		if callback != None:
-			if callback_args != None:
-				callback(callback_args)
-			else:
-				callback()
-	def __str__(self):
-		return self.name
+
+class yellow_door(Enviro_item):
+	def init(self):
+		self.color = 'yellow'
+		self.key_need =self.color+ "_key"
+		self.name = self.color + "_key"
+		self.interact_actions = [Open(self)]
+class blue_door(Enviro_item):
+	def init(self):
+		self.color = 'blue'
+		self.key_need =self.color+ "_key"
+		self.name = self.color + "_key"
+		self.interact_actions = [Open(self)]
+class red_door(Enviro_item):
+	def init(self):
+		self.color = 'red'
+		self.key_need =self.color+ "_key"
+		self.name = self.color + "_key"
+		self.interact_actions = [Open(self)]
+
+class merchant(Npc):
+
+	@World.object_added
+	@Npc.baseinit
+	def __init__(self,BuyAction):
+		if isinstance(BuyAction,list) == False:
+			raise  type_error("merchant only have one buy action")
+		self.name = "merchant"
+		self.interact_actions = [BuyAction]
+
+class talker(Npc):
+
+	@World.object_added
+	@Npc.baseinit
+	def __init__(self,UnlockHiddenEvent):
+		self.name = "A talker"
+		self.interact_actions = [UnlockHiddenAction(UnlockHiddenEvent['TargetObject'],UnlockHiddenEvent['TargetAction'])]
 
 class Bonus(Action):
 	'''
@@ -378,9 +515,10 @@ class Fight(Action):
 		self.update_fight_value()
 		return 'Fight with the monster( {} HP↓, {} GOLD ↑)'.format(self.loss_life,self.fight_with.gold)
 class Open(Action):
-	def __init__(self,door):
+	def __init__(self,door:Object):
 		self.door = door
 		self.key_need = door.key_need
+		self.info = "Open the door (need : {})".format(self.key_need)
 	def open_avaliable(self):
 		if self.interactor[self.key_need] > 0:
 			return True
@@ -388,20 +526,18 @@ class Open(Action):
 			return False
 	def interact(self):
 		self.interactor[self.key_need] -= 1
+class UnlockHiddenAction(Action):
+	def __init__(self,TargetObject:Object,TargetAction :Action):
+		self.TargetObject = TargetObject
+		self.TargetAction = TargetAction
+		self.info = TargetObject.name + " now can : " + TargetAction.info
 
-class world:
-	def __int__(self):
-		pass
-	def show_floor_status(self):
-		pass
-	def add_floor(self):
-		'''add a floor to the environment'''
-		pass
-	def add_monster(self,floor,name,):
-		'''add a object to a floor'''
+	def interact(self):
+		self.TargetObject.add_action(self.TargetAction)
 
-		pass
-	def add_key(self,floor,color):
-		'''add a key to the floor'''
-		pass
 #b = Warrior(name='skydownacai',health=100,attack=10,defense=10,gold=6)
+
+b = talker({"TargetObject":yellow_key(),'TargetAction':BuyAttack(100,100)})
+c = merchant([BuyAttack(100,100)])
+
+print(b)
