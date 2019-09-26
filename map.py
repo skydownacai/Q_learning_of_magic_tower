@@ -1,3 +1,0 @@
-from  game import *
-
-world.

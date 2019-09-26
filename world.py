@@ -161,7 +161,6 @@ class Object:
 				raise type_error("If you want to add a action to a object. The action must be the instance of the class Action")
 		self.interact_actions.pop(self.interact_actions.index(action))
 		print("The object : {} no longer have the action: ".format(action.name))
-
 	@property
 	def info(self):
 		if self.TYPE == 'monster':
@@ -192,8 +191,12 @@ class Object:
 			for action in self.interact_actions:
 				info += "<Action " + str(self.interact_actions.index(action)) + "> : " + action.info + "\n"
 			return info
-	def show(self):
-		print(self.__dict__)
+	def place(self,floor,row,column):
+		'''把这个物体放到 第 floor 层的 第row行 column 列'''
+		self.floor = floor
+		self.row = row
+		self.column = column
+		return self
 class Action:
 
 	@property
@@ -285,6 +288,7 @@ class World:
 			get_action_reward(DEATH_PENALTY)
 			raise Death
 	@property
+
 	def History(self):
 		return self.event_hisotry
 
@@ -537,52 +541,55 @@ class red_key(Bonus_Item):
 		self.bonus_value = 1
 class health50(Bonus_Item):
 	def init(self):
-		self.name = "Health50up"
+		self.name = "50healthup"
 		self.bonus_name = 'health'
 		self.bonus_value = 50
 class health100(Bonus_Item):
 	def init(self):
-		self.name = "Health100up"
+		self.name = "100healthup"
 		self.bonus_name = 'health'
 		self.bonus_value = 100
 class health200(Bonus_Item):
 	def init(self):
-		self.name = "Health200up"
+		self.name = "200healthup"
 		self.bonus_name = 'health'
 		self.bonus_value = 200
 class health400(Bonus_Item):
 	def init(self):
-		self.name = "Health400up"
+		self.name = "400healthup"
 		self.bonus_name = 'health'
 		self.bonus_value = 400
 class oneattackup(Bonus_Item):
 	def init(self):
-		self.name = "1AttackUp"
+		self.name = "1attackup"
 		self.bonus_name = 'attack'
 		self.bonus_value = 1
 class twoattackup(Bonus_Item):
 	def init(self):
-		self.name = "2AttackUp"
+		self.name = "2attackup"
 		self.bonus_name = 'attack'
 		self.bonus_value = 2
 class sword(Bonus_Item):
 	def init(self):
 		self.name = "sword"
 		self.bonus_name = 'attack'
-		self.bonus_value = 20
+		self.bonus_value = 10
+class sheld(Bonus_Item):
+	def init(self):
+		self.name = "sword"
+		self.bonus_name = 'defense'
+		self.bonus_value = 10
 class onedefenseup(Bonus_Item):
 	def init(self):
-		self.name = "1DefenseUp"
+		self.name = "1defenseup"
 		self.bonus_name = 'defense'
 		self.bonus_value = 1
-class twoattackup(Bonus_Item):
+class twodefenseup(Bonus_Item):
 	def init(self):
-		self.name = "2DefenseUp"
+		self.name = "2defenseup"
 		self.bonus_name = 'defense'
 		self.bonus_value = 2
-class attackup(Bonus_Item):
-	def init(self):
-		self.name = "AttackUp"
+
 class yellow_door(Enviro_item):
 	def init(self):
 		self.color = 'yellow'
