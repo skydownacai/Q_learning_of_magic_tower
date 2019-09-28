@@ -1,5 +1,6 @@
 import pandas as pd
 class Strategy:
+
 	def __init__(self):
 		pass
 
@@ -24,7 +25,6 @@ class QLearning(Strategy):
 		self.Qtable = pd.DataFrame(
 			{"state":[]}
 		)
-		self.Qcount
 		self.Qtable = self.Qtable.set_index("state",drop=True)
 		self.reset_index = False
 		self.last_state = None
@@ -45,7 +45,7 @@ class QLearning(Strategy):
 
 		return (state[0],state[0].interact_actions[0])
 
-	def actionreward(self,state,action,reward):
+	def actionreward(self,state):
 
 		''' recieve a reward then you can decided how to handle the reward here'''
 

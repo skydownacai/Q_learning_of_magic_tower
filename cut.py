@@ -26,4 +26,4 @@ def splitimage(src, rownum, colnum, dstpath):
     else:
         print('不合法的行列切割参数！')
 
-splitimage('img/items.png',50,1,'img/items')
+splitimage('img/enemys.png',60,1,'img/monsters')

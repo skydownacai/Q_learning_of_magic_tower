@@ -5,6 +5,7 @@ DEATH_PENALTY = {
 	"attr":"death",
 	"value": -100000
 }
+import time
 class Log:
 	def __init__(self):
 		log_colors_config = {
@@ -65,11 +66,9 @@ class value_error(Exception):
 class End_Game(Exception):
 	def __init__(self):
 		pass
-
 class Death(Exception):
 	def __init__(self):
 		pass
-
 class Object:
 	type_of_str = {
 
@@ -197,6 +196,12 @@ class Object:
 		self.row = row
 		self.column = column
 		return self
+	def items_to_render(self):
+		floor = {}
+		for item in self.items:
+			if item.floor not in floor:
+				floor[item.floor] = []
+			floor[item.floor].append([item.name[:item.name.index("(")],item.row,item.column])
 class Action:
 
 	@property
@@ -224,7 +229,6 @@ class Action:
 		return self._rewards
 	def __str__(self):
 		return self.name
-
 class World:
 	log = Log()
 	def __init__(self):
@@ -305,10 +309,14 @@ class World:
 
 		for item in self.items:
 
+
 			if isinstance(item.interact_prerequiresite,NullObject) == False:
 				if isinstance(item.interact_prerequiresite,list):
 					for obj in item.interact_prerequiresite:
 						obj.as_prerequiresite_to.append(item)
+				if isinstance(item.interact_prerequiresite,Object):
+						before = item.interact_prerequiresite
+						before.as_prerequiresite_to.append(item)
 				'''还不能直接互动的排除掉'''
 				continue
 
@@ -319,7 +327,8 @@ class World:
 			if item.name:
 				self.state.append(item)
 
-		self.map = self.items
+
+		self.map = self.items[:]
 		World.log.info("初始化世界完毕中...")
 
 	def run_warrior(self, strategy : Strategy = None):
@@ -329,9 +338,8 @@ class World:
 		if strategy == None:
 			raise value_error(
 				"Please add a strategy to the warrior to let the warrior know when he faces the state how he act to")
-
 		try:
-
+			input("press any key to start")
 			while True:
 				state_encoded = '_'.join(map(lambda x:x.name,self.state))
 
@@ -343,6 +351,7 @@ class World:
 
 				self.reward_and_update_world(obj,action,strategy.actionreward)
 
+				time.sleep(1)
 		except End_Game:
 			World.log.info("Game Over!")
 
@@ -358,6 +367,16 @@ class World:
 			instance = args[0]
 			instance.code = Object.count[instance.TYPE]
 			Object.count[instance.TYPE] += 1
+			if instance.name in ['200healthup','400healthup']:
+				instance.icon = "bighealthup"
+			elif instance.name in ['50healthup','100healthup']:
+				instance.icon = "bighealthup"
+			elif instance.name in ['attackup']:
+				instance.icon = "attackup"
+			elif instance.name in ['defenseup']:
+				instance.icon = "defenseup"
+			else:
+				instance.icon = instance.name
 			instance.name = instance.name + "(" + str(instance.code) + ")"
 			if instance.TYPE == 'bonus':
 				instance.interact_actions = [PickBonus(instance.bonus_name, instance.bonus_value, instance.name)]
@@ -377,6 +396,7 @@ class World:
 					for item in instance.interact_prerequiresite:
 						Object.add_object_to_world.log.debug(
 							"添加Object Action 关系: " + instance.name + " -> " + item.name)
+
 		return inner
 	@staticmethod
 	def add_relationship(func):
@@ -696,7 +716,6 @@ class Buy(Bonus):
 			{'attr':self.bonus,'value':self.bonus_value},
 			{'attr':'gold','value': -1 * self.expense}
 		]
-
 class PickBonus(Bonus):
 
 	def init(self):
@@ -709,7 +728,6 @@ class PickBonus(Bonus):
 		return [
 			{'attr':self.bonus,'value':self.bonus_value}
 		]
-
 class BuyHealth(Buy):
 	def __init__(self,bonus_value,expense):
 		self.bonus_value = bonus_value
@@ -734,8 +752,12 @@ class Fight(Action):
 		self.fight_with = fight_with
 		self.name = 'fight vs '+ self.fight_with.name
 	def update_fight_value(self):
-		self.attack_time = int(self.fight_with.health / (Action.interactor.attack - self.fight_with.defense))
-		self.loss_life = self.attack_time * (self.fight_with.attack - self.interactor.defense)
+		if Action.interactor.attack > self.fight_with.defense:
+			self.attack_time = int(self.fight_with.health / (Action.interactor.attack - self.fight_with.defense))
+			self.loss_life = self.attack_time * (self.fight_with.attack - self.interactor.defense)
+		else:
+			self.loss_life = \
+				100000000
 		#self.margin_attack_of_life =  [int(self.fight_with.health / (self.interactor.attack + i - self.fight_with.defense))  * (self.fight_with.attack - self.interactor.defense) - self.loss_life for i in range(1,6)]
 		#self.margin_defense_of_life = [int(self.fight_with.health / (self.interactor.attack - self.fight_with.defense)) * (self.fight_with.attack - self.interactor.defense - i) - self.loss_life for i in range(1,6)]
 	def fightavalibe(self):
@@ -761,7 +783,6 @@ class Fight(Action):
 			{'attr':'health', 'value': -1 * self.loss_life},
 			{'attr':'gold'  , 'value': self.fight_with.gold}
 		]
-
 class Open(Action):
 	def __init__(self,door:Object):
 		self.name = "Open door {}".format(door.name)
@@ -781,7 +802,6 @@ class Open(Action):
 		return [
 			{'attr':self.key_need, 'value': -1},
 		]
-
 class UnlockHiddenAction(Action):
 	def __init__(self,TargetObject:Object,TargetAction :Action):
 		self.TargetObject = TargetObject
@@ -790,11 +810,3 @@ class UnlockHiddenAction(Action):
 
 	def interact(self):
 		self.TargetObject.add_action(self.TargetAction)
-
-Action.interactor = Warrior(name='skydownacai',health=100,attack=10,defense=10,gold=6)
-#a = Store([BuyAttack(100,100)])
-#a = blue_key()
-#a = Open(yellow_door())
-#a = BuyAttack(100,100)
-#a = Store([BuyAttack(100,100)])
-#a.interact_actions[0].act()
