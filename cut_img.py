@@ -17,13 +17,14 @@ def splitimage(src, rownum, colnum, dstpath):
         num = 0
         rowheight = 32
         colwidth = 32
+
         for r in range(rownum):
             for c in range(colnum):
-                box = (c * colwidth, r * rowheight, (c + 1) * colwidth, (r + 1) * rowheight)
+                box = ((c + 1) * colwidth, r * rowheight, (c + 2) * colwidth, (r + 1) * rowheight)
                 img.crop(box).save(os.path.join(dstpath, basename + '_' + str(num) + '.' + ext), ext)
                 num = num + 1
         print('图片切割完毕，共生成 %s 张小图片。' % num)
     else:
         print('不合法的行列切割参数！')
 
-splitimage('img/enemys.png',60,1,'img/monsters')
+splitimage('img/enemys.png',60,1,'img/monsters_move')

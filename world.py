@@ -1,11 +1,9 @@
 import colorlog
 import logging
+import threading
 from  strategy import *
-DEATH_PENALTY = {
-	"attr":"death",
-	"value": -100000
-}
 import time
+from copy import copy,deepcopy
 class Log:
 	def __init__(self):
 		log_colors_config = {
@@ -71,14 +69,12 @@ class Death(Exception):
 		pass
 class Object:
 	type_of_str = {
-
 		0 : "monster",
 		1 : "npc",
 		2 : "store",
 		4 : "enviro_item",
 		3 : "bonus",
 		5 : "warrior"
-
 	}
 	count = {
 		"monster" :0,
@@ -86,7 +82,9 @@ class Object:
 		'enviro_item':0,
 		'npc':0,
 		'store':0,
+		'warrior':0
 	}
+	total_count = 0
 	index = {
 	}
 	add_object_to_world = None
@@ -121,7 +119,6 @@ class Object:
 	def __setattr__(self, key, value):
 		self.checkattr(key,value)
 		if key == "interact_prerequiresite":
-
 			if not isinstance(value, Object) and  not isinstance(value,list):
 				raise type_error("Must be the (list of) instance of Warrior!")
 
@@ -204,18 +201,6 @@ class Object:
 			floor[item.floor].append([item.name[:item.name.index("(")],item.row,item.column])
 class Action:
 
-	@property
-	def interactor(self):
-		try:
-			return Action.actor
-		except:
-			raise value_error("You haven't specific a warrior to interact.Try: Action.interactor = ")
-	@interactor.setter
-	def interactor(self,value):
-		if not isinstance(value,Warrior):
-			raise type_error("The interactor must be the instance of Warrior!")
-		World.log.debug("指定player: " + value.name)
-		Action.actor = value
 	def act(self,callback = None,callback_args = None):
 		Object.add_object_to_world.log.debug("<Action> : {} ".format(self.name))
 		self.interact()
@@ -235,7 +220,6 @@ class World:
 		self.items = []
 		self._item = []
 		self.event_hisotry = []
-		self.state = [] #所有能立即进行action的Object 集合
 
 	def get_item(self, code):
 		return self._item[code]
@@ -255,7 +239,7 @@ class World:
 			self.log.debug("<Reward> : {} {}".format(reward['attr'],reward['value']))
 			get_action_reward(reward)
 
-		self.log.debug("Now status : {}\n".format(Action.interactor.status))
+		#self.log.debug("Now status : {}\n".format(Action.interactor.status))
 		''' 执行一个action之后,更新状态'''
 		'''如果这个object 是怪物,奖励物品,环境物品,那么这个物品会消失,并解说与其他
 			type_of_str = {
@@ -272,24 +256,39 @@ class World:
 			'''将这个object 移除状态 和 世界物品'''
 			self.state.remove(object)
 			self.map.remove(object)
+			try:
+				'''可视化里去掉这个object'''
+				this_position = self.gui.position_to_str(object.row,object.column)
+				del self.gui.floor[self.gui.floor_index][this_position]
+			except:
+				pass
+			#print('object', object.name)
+
 			'''这个object 消失后解锁了其他的object 可互动'''
 			for item in object.as_prerequiresite_to:
 				item.interact_prerequiresite = NullObject()
-				if 'door' in item.name and World.warrior[item.key_need] == 0:
-					'''如果当前有门可以直接互动,但是没有对应的钥匙的话也要排除'''
-					continue
-				if item not in self.map:
+				if item not in self.map or item in self.state:
 					pass
 				else:
 					self.state.append(item)
 
+			#捡到一把钥匙后就可以打开更多的门
+			if "key" in object.name and Action.interactor[object.bonus_name] == 1:
+					for item in self.door_need_key:
+						if item.key_need == object.bonus_name:
+								self.state.append(item)
+								self.door_need_key.remove(item)
+			#print([item.name for item in self.state])
+			#开了一个门，如果钥匙耗光了，那么本来能互动的门就不能互动
+			if "door" in object.name and Action.interactor[object.key_need] == 0:
+					for item in self.state[:]:
+						if "door" in item.name and item.key_need == object.key_need:
+							self.door_need_key.append(item)
+							self.state.remove(item)
 		self.state = list(sorted(self.state,key = lambda x:x.code)) # 姜
-
 		if self.state == []:
 			raise End_Game
-
 		if Action.interactor.health <= 0:
-			get_action_reward(DEATH_PENALTY)
 			raise Death
 	@property
 
@@ -300,16 +299,23 @@ class World:
 	def warrior(self):
 		return Action.interactor
 
+	def create_world(self):
+		#生成世界函数
+		pass
+
 	def reset(self):
 
 		''' 重新 初始化 世界'''
 		World.log.info("初始化世界中...")
+		self.items = []
+		Object.total_count = 0
+		for type in Object.count:
+			Object.count[type] = 0
+		self.create_world()
 		self.state = []
 		self.event_hisotry = []
-
+		self.door_need_key = []
 		for item in self.items:
-
-
 			if isinstance(item.interact_prerequiresite,NullObject) == False:
 				if isinstance(item.interact_prerequiresite,list):
 					for obj in item.interact_prerequiresite:
@@ -320,52 +326,60 @@ class World:
 				'''还不能直接互动的排除掉'''
 				continue
 
-			if 'door' in item.name and World.warrior[item.key_need] == 0:
+			if 'door' in item.name and Action.interactor[item.key_need] == 0:
 				'''如果当前有门可以直接互动,但是没有对应的钥匙的话也要排除'''
+
+				self.door_need_key.append(item)
 				continue
 
-			if item.name:
-				self.state.append(item)
-
-
+			self.state.append(item)
 		self.map = self.items[:]
 		World.log.info("初始化世界完毕中...")
-
+		self.gui.floor_index = 0
+		for key in self.warrior_info:
+			Action.interactor[key]  = self.warrior_info[key]
+		self.gui.init = True
 	def run_warrior(self, strategy : Strategy = None):
+		self.warrior_info = deepcopy(Action.interactor.__dict__)
 		self.reset()
+
 		if World.warrior == None:
 			raise value_error("Please Try to run <World.warrior = > to specific a warrior to the World.")
 		if strategy == None:
 			raise value_error(
 				"Please add a strategy to the warrior to let the warrior know when he faces the state how he act to")
-		try:
-			input("press any key to start")
-			while True:
-				state_encoded = '_'.join(map(lambda x:x.name,self.state))
-
+		input("press any key to start")
+		while True:
+			try:
+				stauts_values = Action.interactor.stauts_value
+				state_encoded =  '_'.join(map(lambda x:str(x),stauts_values))
+				state_encoded += "/"+'_'.join(map(lambda x:str(x.name),self.state))
 				World.log.debug("Now state : "+state_encoded)
-
 				(obj,action) = strategy.choose_action(self.state,state_encoded)
-
 				self.event_hisotry.append((obj, action))
-
+				try:
+					render_action = threading.Thread(target=self.gui.go,args=(obj,))
+					render_action.start()
+					render_action.join()
+				except:
+					pass
 				self.reward_and_update_world(obj,action,strategy.actionreward)
-
-				time.sleep(1)
-		except End_Game:
-			World.log.info("Game Over!")
-
-		except Death:
-			World.log.info("You died!")
-
+				time.sleep(0.2)
+			except End_Game:
+				World.log.info("Game Over!")
+				self.reset()
+				exit()
+			except Death:
+				World.log.info("You died!")
+				self.reset()
 
 	@staticmethod
 	def object_added(__init__):
-
 		def inner(*args,**kwargs):
 			__init__(*args,**kwargs)
 			instance = args[0]
-			instance.code = Object.count[instance.TYPE]
+			instance.code = Object.total_count
+			Object.total_count += 1
 			Object.count[instance.TYPE] += 1
 			if instance.name in ['200healthup','400healthup']:
 				instance.icon = "bighealthup"
@@ -378,6 +392,8 @@ class World:
 			else:
 				instance.icon = instance.name
 			instance.name = instance.name + "(" + str(instance.code) + ")"
+			if "door" in instance.name:
+				instance.interact_actions = [Open(instance)]
 			if instance.TYPE == 'bonus':
 				instance.interact_actions = [PickBonus(instance.bonus_name, instance.bonus_value, instance.name)]
 			if instance.TYPE == 'monster':
@@ -404,12 +420,10 @@ class World:
 			instance = args[0]
 			object = args[1]
 			func(*args)
-
 class NullObject(Object):
 	def __init__(self):
 		self.name = "Void object"
 		self.info = "Void Object"
-
 class Warrior(Object):
 
 	def __init__(self,name,health,defense,gold,attack,start_floor = 1,yellow_key = 0,blue_key = 0,red_key = 0,strategy_f = None):
@@ -423,6 +437,7 @@ class Warrior(Object):
 		self.yellow_key = yellow_key
 		self.blue_key = blue_key
 		self.red_key = red_key
+		self.icon = "facedown"
 	@property
 	def status(self):
 		keys = ['name','health','attack','defense','gold','yellow_key','blue_key','red_key']
@@ -430,6 +445,13 @@ class Warrior(Object):
 		for key in keys:
 			_status[key] = self[key]
 		return _status
+	@property
+	def stauts_value(self):
+		keys = ['health','attack','defense','gold','yellow_key','blue_key','red_key']
+		values = []
+		for key in keys:
+			values.append(self[key])
+		return values
 class Store(Object):
 
 	@World.object_added
@@ -451,6 +473,7 @@ class Monster(Object):
 		self.type = 0
 		self.init() #在这里自定义
 		self.interact_prerequiresite = interact_prerequiresite
+
 	def fight(self):
 		self.interact_actions[0].interact()
 
@@ -464,10 +487,8 @@ class Enviro_item(Object):
 		self.init()
 		self.status = 0 #status = 0 表明还未进行互动 status = 1 表明已经互动过
 		self.interact_prerequiresite = interact_prerequiresite
-
 	def interact(self):
 		self.interact_actions[0].interact()
-
 class Npc(Object):
 
 	@staticmethod
@@ -502,6 +523,7 @@ class 小蝙蝠(Monster):
 		self.defense = 3
 		self.gold = 3
 		self.health = 35
+
 class 初级法师(Monster):
 	def init(self):
 		self.name = "初级法师"
@@ -531,7 +553,6 @@ class 初级士兵(Monster):
 		self.health = 50
 
 class Bonus_Item(Object):
-
 	@World.object_added
 	def __init__(self,interact_prerequiresite = NullObject()):
 		'''
@@ -615,19 +636,18 @@ class yellow_door(Enviro_item):
 		self.color = 'yellow'
 		self.key_need =self.color+ "_key"
 		self.name = self.color + "_door"
-		self.interact_actions = [Open(self)]
+
 class blue_door(Enviro_item):
 	def init(self):
 		self.color = 'blue'
 		self.key_need =self.color+ "_key"
 		self.name = self.color + "_door"
-		self.interact_actions = [Open(self)]
 class red_door(Enviro_item):
 	def init(self):
 		self.color = 'red'
 		self.key_need =self.color+ "_key"
 		self.name = self.color + "_door"
-		self.interact_actions = [Open(self)]
+
 
 class merchant(Npc):
 
@@ -752,6 +772,7 @@ class Fight(Action):
 		self.fight_with = fight_with
 		self.name = 'fight vs '+ self.fight_with.name
 	def update_fight_value(self):
+
 		if Action.interactor.attack > self.fight_with.defense:
 			self.attack_time = int(self.fight_with.health / (Action.interactor.attack - self.fight_with.defense))
 			self.loss_life = self.attack_time * (self.fight_with.attack - self.interactor.defense)

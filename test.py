@@ -1,7 +1,9 @@
-@classmethod
-def interact(cls,a):
-	print(cls.name)
+from copy import copy,deepcopy
 class A:
-	name = "liujiacai"
-
-interact(A,1)
+	def __init__(self,name):
+		self.name = name
+	def get(self):
+		return 1
+a = [A(1),A(2)]
+b = object.__new__(A)
+print(b.get())

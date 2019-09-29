@@ -17,7 +17,7 @@ class VISUAL:
 		self.map_row = 11
 		self.map_column = 11
 		self.screen_block_width = 32
-		self.floor = [[]]
+		self.floor = []
 		size = self.screen_column * self.screen_block_width, self.screen_row * self.screen_block_width  # 设置窗口大小
 		self.screen = pygame.display.set_mode(size)  #
 		self.pic = []
@@ -30,10 +30,15 @@ class VISUAL:
 		self.floor_index = 0
 		self.choose_item = {}
 		self.floor_item = {
-			0 : {
-
-			}
 		}
+		this_floor_index = 0
+		for floor_file in os.listdir("floor"):
+			self.floor_item[this_floor_index] = {}
+			this_floor = json.loads(open("floor/{}".format(floor_file), 'r').read())
+			self.floor.append(this_floor)  # 首先载入楼层样式
+			for item in this_floor:
+				self.floor_item[this_floor_index][str([item[1],item[2]])] = item[0]
+			this_floor_index +=1
 	def render(self, obj,row, coloumn):
 		if isinstance(obj,str):
 			self.screen.blit(VISUAL.object[obj], (coloumn * self.screen_block_width, row * self.screen_block_width))
@@ -55,20 +60,19 @@ class VISUAL:
 		notice2 = TEXT.render("SAVE".format(self.floor_index),0,(255,255,255))
 		notice3 = TEXT.render("CLEAR".format(self.floor_index),0,(255,255,255))
 		pygame.draw.rect(self.screen,(200,0,0),((11 * self.screen_block_width , 1 * self.screen_block_width),(6 * self.screen_block_width,1*self.screen_block_width)))
-		pygame.draw.rect(self.screen,(0,200,0),((11 * self.screen_block_width , 4 * self.screen_block_width),(6 * self.screen_block_width,1*self.screen_block_width)))
-		pygame.draw.rect(self.screen,(150,200,0),((11 * self.screen_block_width , 5 * self.screen_block_width),(6 * self.screen_block_width,1*self.screen_block_width)))
+		pygame.draw.rect(self.screen,(0,200,0),((11 * self.screen_block_width , 5 * self.screen_block_width),(6 * self.screen_block_width,1*self.screen_block_width)))
+		pygame.draw.rect(self.screen,(150,200,0),((11 * self.screen_block_width , 6 * self.screen_block_width),(6 * self.screen_block_width,1*self.screen_block_width)))
 
 		self.render("stair_up",0,15)
 		self.render("stair_down",0,16)
 		self.screen.blit(notice, (11 * self.screen_block_width, 0 * self.screen_block_width + 8))
 		self.screen.blit(notice1, (11 * self.screen_block_width, 1 * self.screen_block_width + 8))
-		self.screen.blit(notice2, (11 * self.screen_block_width, 4 * self.screen_block_width + 8))
-		self.screen.blit(notice3, (11 * self.screen_block_width, 5 * self.screen_block_width + 8))
+		self.screen.blit(notice2, (11 * self.screen_block_width, 5 * self.screen_block_width + 8))
+		self.screen.blit(notice3, (11 * self.screen_block_width, 6 * self.screen_block_width + 8))
 
 		pointer = [2,11]
 		for file in VISUAL.object:
-			if "stair" in file:
-				continue
+
 			surface = VISUAL.object[file]
 			self.choose_item[str(pointer)] = file
 			self.render(surface,pointer[0],pointer[1])
@@ -123,17 +127,20 @@ class VISUAL:
 								self.floor_item[
 									str([row,col])
 								] = self.pickup
-						if col >= 11 and col <= 17 and row >= 2 and row <= 3:
-							self.pickup = self.choose_item[str([row, col])]
-							self.pickup_img = VISUAL.object[self.pickup]
-							print('pick up', self.pickup)
+						if col >= 11 and col <= 17 and row >= 2 and row <= 4:
+							try:
+								self.pickup = self.choose_item[str([row, col])]
+								self.pickup_img = VISUAL.object[self.pickup]
+								print('pick up', self.pickup)
+							except:
+								pass
 
-						if col >= 11 and row == 4:
+						if col >= 11 and row == 5:
 							for index in range(len(self.floor)):
 								with open("floor/floor_{}.json".format(index + 1),'w') as f:
 									f.write(json.dumps(self.floor[index]))
 							print('保存成功')
-						if col >= 11 and row == 5:
+						if col >= 11 and row == 6:
 							self.floor[self.floor_index] = []
 							self.floor_item[self.floor_index] = {}
 							print('清空成功')
