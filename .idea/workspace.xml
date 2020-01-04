@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c04d4c51-9a73-4ba3-9667-fc60b2c9446c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ActionsAndObjects.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MagicTowerConstants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MagicTowerItems.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/func_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cut.py" beforeDir="false" afterPath="$PROJECT_DIR$/cut_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cut_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/cut_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/map_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/strategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testmap.py" beforeDir="false" afterPath="$PROJECT_DIR$/testmap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visulization.py" beforeDir="false" afterPath="$PROJECT_DIR$/visulization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
@@ -19,17 +26,20 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AI_Qlearning_of_magic_tower$just_test.coverage" NAME="just_test Coverage Results" MODIFIED="1569118413920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AI_Qlearning_of_magic_tower$enviroment.coverage" NAME="enviroment Coverage Results" MODIFIED="1569126987724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$cut_img.coverage" NAME="cut_img Coverage Results" MODIFIED="1569727915848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$cut_img.coverage" NAME="cut_img Coverage Results" MODIFIED="1577522948542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$gui.coverage" NAME="gui Coverage Results" MODIFIED="1569485636064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$testmap.coverage" NAME="testmap Coverage Results" MODIFIED="1569758102433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$testmap.coverage" NAME="testmap Coverage Results" MODIFIED="1576154440517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$cut.coverage" NAME="cut Coverage Results" MODIFIED="1569681669673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$world_new.coverage" NAME="world_new Coverage Results" MODIFIED="1577438754578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$base.coverage" NAME="base Coverage Results" MODIFIED="1569399333243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$MagicTowerItems.coverage" NAME="MagicTowerItems Coverage Results" MODIFIED="1577516777947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$enviroment.coverage" NAME="enviroment Coverage Results" MODIFIED="1569334477385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$map_editor.coverage" NAME="map_editor Coverage Results" MODIFIED="1569753186570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$func_test.coverage" NAME="func_test Coverage Results" MODIFIED="1577516796603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$map_editor.coverage" NAME="map_editor Coverage Results" MODIFIED="1578161511562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$test.coverage" NAME="test Coverage Results" MODIFIED="1569756478425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$visulization.coverage" NAME="visulization Coverage Results" MODIFIED="1569738159035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$visulization.coverage" NAME="visulization Coverage Results" MODIFIED="1576154378662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$game.coverage" NAME="game Coverage Results" MODIFIED="1569412927562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$world.coverage" NAME="world Coverage Results" MODIFIED="1569756037416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Qlearning_of_magic_tower$world.coverage" NAME="world Coverage Results" MODIFIED="1577519567517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -48,48 +58,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world.py">
+        <entry file="file://$PROJECT_DIR$/ActionsAndObjects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-715">
-              <caret line="305" column="8" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="8" />
+            <state relative-caret-position="1615">
+              <caret line="87" column="74" selection-start-line="87" selection-start-column="74" selection-end-line="87" selection-end-column="74" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#96#1192#0" />
-                <element signature="e#1227#1354#0" />
-                <element signature="e#1394#1467#0" />
-                <element signature="e#1498#1536#0" />
-                <element signature="e#1568#1606#0" />
-                <element signature="e#1635#1661#0" />
-                <element signature="e#1687#1713#0" />
-                <element signature="e#3307#3696#0" />
-                <element signature="e#3735#3762#0" />
-                <element signature="e#3795#3824#0" />
-                <element signature="e#3855#3891#0" />
-                <element signature="e#3915#3940#0" />
-                <element signature="e#3999#4676#0" />
-                <element signature="e#6774#7115#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testmap.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#1#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/visulization.py">
+        <entry file="file://$PROJECT_DIR$/cut_img.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="240" column="18" selection-start-line="240" selection-start-column="18" selection-end-line="240" selection-end-column="18" />
+            <state relative-caret-position="19">
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/warrior/facedown.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/map_editor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="237" column="50" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -98,10 +99,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/python36/Lib/copy.py">
+        <entry file="file://$PROJECT_DIR$/img/npc.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testmap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
+            <state>
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visulization.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2736">
+              <caret line="151" column="73" selection-start-line="151" selection-start-column="73" selection-end-line="151" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/world.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -117,19 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Action</find>
-      <find>actor</find>
-      <find>Action.interactor</find>
-      <find>Warrior</find>
-      <find>floor_count</find>
-      <find>DEATH</find>
-      <find>stair_up</find>
-      <find>self.gui</find>
-      <find>instance of War</find>
-      <find>小蝙蝠</find>
-      <find>go</find>
-      <find>code</find>
-      <find>world</find>
       <find>world.warrior</find>
       <find>stauts</find>
       <find>staut</find>
@@ -138,7 +152,6 @@
       <find>door</find>
       <find>yellow_key</find>
       <find>ob</find>
-      <find>object_added</find>
       <find>add_fl</find>
       <find>sword</find>
       <find>self.reset</find>
@@ -147,6 +160,20 @@
       <find>deepcopy</find>
       <find>keyerror: 0</find>
       <find>reset</find>
+      <find>object.add</find>
+      <find>object_added</find>
+      <find>save</find>
+      <find>Mouse</find>
+      <find>Mou</find>
+      <find>VISUAL.object</find>
+      <find>baseinit</find>
+      <find>baseini</find>
+      <find>FIGHT</find>
+      <find>PickBonus</find>
+      <find>bonus</find>
+      <find>store</find>
+      <find>reverted</find>
+      <find>creat_info</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,22 +194,34 @@
         <option value="$PROJECT_DIR$/map.py" />
         <option value="$PROJECT_DIR$/floor_style.py" />
         <option value="$PROJECT_DIR$/cut.py" />
-        <option value="$PROJECT_DIR$/strategy.py" />
-        <option value="$PROJECT_DIR$/cut_img.py" />
-        <option value="$PROJECT_DIR$/map_editor.py" />
         <option value="D:/python36/Lib/copy.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/world.py" />
-        <option value="$PROJECT_DIR$/visulization.py" />
+        <option value="$PROJECT_DIR$/strategy.py" />
+        <option value="$PROJECT_DIR$/errors.py" />
+        <option value="$PROJECT_DIR$/MagicTowerActions.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000bfe/vet_binance.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000d93/basefunctions.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000d2b/txclause.py" />
+        <option value="$PROJECT_DIR$/world_old.py" />
+        <option value="$PROJECT_DIR$/func_test.py" />
+        <option value="$PROJECT_DIR$/world_new.py" />
         <option value="$PROJECT_DIR$/testmap.py" />
+        <option value="$PROJECT_DIR$/visulization.py" />
+        <option value="$PROJECT_DIR$/MagicTowerItems.py" />
+        <option value="$PROJECT_DIR$/MagicTowerConstants.py" />
+        <option value="$PROJECT_DIR$/ActionsAndObjects.py" />
+        <option value="$PROJECT_DIR$/world.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv006b8a/txclause.py" />
+        <option value="$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv007a01/Bv007a01/txclause.py" />
+        <option value="$PROJECT_DIR$/cut_img.py" />
+        <option value="$PROJECT_DIR$/map_editor.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="460" />
-    <option name="y" value="132" />
-    <option name="width" value="2505" />
-    <option name="height" value="1379" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="1300" />
+    <option name="height" value="1400" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -192,7 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,10 +238,16 @@
               <item name="Qlearning_of_magic_tower" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qlearning_of_magic_tower" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Qlearning_of_magic_tower" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qlearning_of_magic_tower" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,7 +269,73 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testmap">
+  <component name="RunManager" selected="Python.map_editor">
+    <configuration name="MagicTowerItems" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AI_Qlearning_of_magic_tower" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MagicTowerItems.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cut_img" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AI_Qlearning_of_magic_tower" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cut_img.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="func_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AI_Qlearning_of_magic_tower" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/func_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="map_editor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AI_Qlearning_of_magic_tower" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,72 +350,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/map_editor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AI_Qlearning_of_magic_tower" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testmap" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AI_Qlearning_of_magic_tower" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testmap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="visulization" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AI_Qlearning_of_magic_tower" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visulization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,11 +382,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testmap" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.world" />
         <item itemvalue="Python.map_editor" />
-        <item itemvalue="Python.visulization" />
+        <item itemvalue="Python.cut_img" />
+        <item itemvalue="Python.world" />
+        <item itemvalue="Python.func_test" />
+        <item itemvalue="Python.MagicTowerItems" />
       </list>
     </recent_temporary>
   </component>
@@ -369,6 +413,19 @@
       <workItem from="1569680469184" duration="5316000" />
       <workItem from="1569685965264" duration="15448000" />
       <workItem from="1569737473584" duration="17326000" />
+      <workItem from="1569769004015" duration="424000" />
+      <workItem from="1570352023528" duration="379000" />
+      <workItem from="1570531984186" duration="721000" />
+      <workItem from="1573142301228" duration="145000" />
+      <workItem from="1573142483740" duration="643000" />
+      <workItem from="1576067054314" duration="3628000" />
+      <workItem from="1576081999898" duration="668000" />
+      <workItem from="1576118493829" duration="4000" />
+      <workItem from="1576154157390" duration="989000" />
+      <workItem from="1577430397796" duration="14684000" />
+      <workItem from="1577512729534" duration="9534000" />
+      <workItem from="1577600494831" duration="2138000" />
+      <workItem from="1578161197034" duration="238000" />
     </task>
     <task id="LOCAL-00001" summary="添加了一张测试地图&#10;剩下编写Qlearning 与 魔塔的真正地图">
       <created>1569420107916</created>
@@ -395,22 +452,31 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124019000" />
+    <option name="totallyTimeSpent" value="158271000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="51" width="2003" height="1102" extended-state="0" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49804434" visible="true" weight="0.112082265" />
-      <window_info id="Structure" order="1" sideWeight="0.5019557" side_tool="true" weight="0.095309384" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49615383" visible="true" weight="0.12175649" />
+      <window_info id="Structure" order="1" sideWeight="0.50384617" side_tool="true" weight="0.11876248" />
       <window_info id="Favorites" order="2" sideWeight="0.5005025" side_tool="true" weight="0.13572854" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32997987" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27364185" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.10618557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32997987" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
@@ -424,13 +490,13 @@
       <window_info anchor="right" id="Database" order="4" weight="0.32984033" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49804434" visible="true" weight="0.112082265" />
-      <window_info id="Structure" order="1" sideWeight="0.5019557" side_tool="true" weight="0.095309384" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49615383" visible="true" weight="0.119760476" />
+      <window_info id="Structure" order="1" sideWeight="0.50384617" side_tool="true" weight="0.11876248" />
       <window_info id="Favorites" order="2" sideWeight="0.5005025" side_tool="true" weight="0.13572854" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4340206" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35211268" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32997987" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28873238" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.10618557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -456,18 +522,18 @@
     <MESSAGE value="初步实现了 将学习过程 进行可视化" />
     <option name="LAST_COMMIT_MESSAGE" value="初步实现了 将学习过程 进行可视化" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/world_old.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/actions.py" />
-    <entry file="file://$PROJECT_DIR$/enviro_item.py" />
-    <entry file="file://$PROJECT_DIR$/bonus_item.py" />
-    <entry file="file://$PROJECT_DIR$/monsters.py" />
-    <entry file="file://D:/python36/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70357">
-          <caret line="3793" column="22" selection-start-line="3793" selection-start-column="22" selection-end-line="3793" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-181045577/pygame/rect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -495,32 +561,13 @@
     <entry file="file://$PROJECT_DIR$/img/hero48.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/stairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/terrains.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/npcs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/img/enemies_full_black.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/img/enemys.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/shop_LR.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://D:/python36/Lib/site-packages/pygame/__init__.py">
@@ -554,32 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/floor_style.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floor/floor_3.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floor/floor_1.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/floor/floor_2.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cut_img.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/python36/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -595,20 +616,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map_editor.py">
+    <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+        <state relative-caret-position="418">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="779">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floor_style.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python36/Lib/copy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -619,60 +654,147 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MagicTowerActions.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000bfe/vet_binance.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000d2b/txclause.py" />
+    <entry file="file://$PROJECT_DIR$/errors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-181045577/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="654" column="32" lean-forward="true" selection-start-line="654" selection-start-column="32" selection-end-line="654" selection-end-column="32" />
+        <state relative-caret-position="357">
+          <caret line="949" column="61" selection-start-line="949" selection-start-column="61" selection-end-line="949" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/python36/Lib/copy.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv000d93/basefunctions.py" />
+    <entry file="file://$PROJECT_DIR$/floor/floor_1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floor/floor_2.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/func_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world.py">
+    <entry file="file://$PROJECT_DIR$/floor/floor_3.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world_old.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715">
-          <caret line="305" column="8" selection-start-line="305" selection-start-column="8" selection-end-line="305" selection-end-column="8" />
+        <state relative-caret-position="295">
+          <caret line="250" selection-start-line="250" selection-end-line="257" selection-end-column="13" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#96#1192#0" />
-            <element signature="e#1227#1354#0" />
-            <element signature="e#1394#1467#0" />
-            <element signature="e#1498#1536#0" />
-            <element signature="e#1568#1606#0" />
-            <element signature="e#1635#1661#0" />
-            <element signature="e#1687#1713#0" />
-            <element signature="e#3307#3696#0" />
-            <element signature="e#3735#3762#0" />
-            <element signature="e#3795#3824#0" />
-            <element signature="e#3855#3891#0" />
-            <element signature="e#3915#3940#0" />
-            <element signature="e#3999#4676#0" />
-            <element signature="e#6774#7115#0" />
+            <element signature="e#127#1223#0" />
+            <element signature="e#1760#6805#0" />
+            <element signature="e#1774#1875#0" />
+            <element signature="e#1885#1976#0" />
+            <element signature="e#2003#2007#0" />
+            <element signature="e#2067#3266#1" />
+            <element signature="e#3355#3744#0" />
+            <element signature="e#6822#7169#0" />
+            <element signature="e#13691#13766#0" />
+            <element signature="e#13792#14568#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MagicTowerItems.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="106" column="24" lean-forward="true" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv006b6c/tron129_205.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv007ae4/tron129_205.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv000bfe/Bv006b8a/txclause.py" />
+    <entry file="file://$PROJECT_DIR$/img/items/items_47.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv007a01/Bv007a01/txclause.py" />
+    <entry file="file://$PROJECT_DIR$/MagicTowerConstants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/terrains.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/shop_LR.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/npcs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/floor/floor.json" />
+    <entry file="file://$PROJECT_DIR$/ActionsAndObjects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="87" column="74" selection-start-line="87" selection-start-column="74" selection-end-line="87" selection-end-column="74" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cut_img.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/npc.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testmap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visulization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="240" column="18" selection-start-line="240" selection-start-column="18" selection-end-line="240" selection-end-column="18" />
+        <state relative-caret-position="2736">
+          <caret line="151" column="73" selection-start-line="151" selection-start-column="73" selection-end-line="151" selection-end-column="73" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testmap.py">
+    <entry file="file://$PROJECT_DIR$/world.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="418">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/warrior/facedown.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map_editor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="237" column="50" selection-start-line="237" selection-start-column="24" selection-end-line="237" selection-end-column="50" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

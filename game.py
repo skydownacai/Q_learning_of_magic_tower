@@ -1,4 +1,4 @@
-from world import *
+from world_old import *
 from strategy import *
 
 world = World()

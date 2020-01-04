@@ -39,6 +39,7 @@ class QLearning(Strategy):
 		if state_encoded not in self.Qtable.index:
 			self.Qtable = self.Qtable.append(
 				{'state':state_encoded},ignore_index=True)
+
 		if not self.reset_index:
 			self.Qtable = self.Qtable.set_index("state")
 			self.reset_index = True

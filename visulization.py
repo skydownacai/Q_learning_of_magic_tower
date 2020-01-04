@@ -2,11 +2,12 @@ import pygame
 import sys
 import os
 import json
-from world import *
+from world_old import *
 import time
 import os
 import random
 class Dot:
+
     def __init__(self,row,column):
         self.row = row
         self.column = column
@@ -121,8 +122,10 @@ class GUI:
             self.add_floor(this_floor)  # 首先载入楼层样式
 
         for item in self.visualworld.items:
-            self.floor[item.floor - 1][GUI.position_to_str(item.row,item.column)] = item
-
+            try:
+                self.floor[item.floor - 1][GUI.position_to_str(item.row,item.column)] = item
+            except:
+                pass
     def render_floor(self,index):
         if len(self.floor) == 0:
             return 0
@@ -168,6 +171,7 @@ class GUI:
         '''
         target_postion = list(target_postion)
         start  = Dot(start_postion[0],start_postion[1])
+
         has_visited = [start]
         has_been = [start_postion]
         end = False
@@ -195,30 +199,52 @@ class GUI:
         return movements[::-1]
 
     def render_walking(self,position_seq :list):
+
         '''
+
         :param position_seq:
+
         :return:
+
         '''
+
         warrior = self.visualworld.warrior
+
         for move in position_seq:
+
             warrior.row,warrior.column = move
+
             time.sleep(0.02)
 
     def go(self,target : Object):
+
         '''
+
         让 warrior 走到 目边旁边
+
         Object.floor 都是从 1 开始计数
+
         GUI.floor 从0 开始计数
+
         :param target:
+
         :return:
+
         '''
+
         target_postion = [target.row,target.column]
+
         warrior = self.visualworld.warrior
+
         start_position = [warrior.row,warrior.column]
+
         target_floor = target.floor
+
         while True:
+
             if target_floor == self.floor_index + 1:
                 break
+
             if target_floor > self.floor_index + 1:
                 '''上楼'''
                 way = self.find_way_within_floor(self.floor[self.floor_index]['stair_up'],start_position)
